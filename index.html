@@ -321,12 +321,15 @@ const COLLECTIONS = {
   new_animal: 'NEW ANIMAL'
 };
 
+// Map show identifiers to their collections
+// Generated from shows.json — each show belongs to one or more collections
+const SHOW_COLLECTIONS = {"gd69-02-27.sbd.16track.kaplan.6315.sbeok.shnf":["young_bettys"],"gd69-02-28.sbd.16track.kaplan.3397.sbeok.shnf":["young_bettys"],"gd69-03-01.sbd.16track.kaplan.4030.sbeok.shnf":["young_bettys"],"gd69-03-02.sbd.16track.kaplan.3344.sbeok.shnf":["young_bettys"],"gd69-05-23.sbd.kaplan.12223.sbeok.shnf":["young_bettys"],"gd71-02-18.sbd.orf.107.sbeok.shnf":["young_bettys"],"gd71-02-19.sbd.orf.1029.sbeok.shnf":["young_bettys"],"gd71-02-20.sbd.orf.111.sbeok.shnf":["young_bettys"],"gd71-02-21.sbd.lunz.1980.sbeok.shnf":["young_bettys"],"gd1971-02-23.sbd.miller.110353.flac16":["young_bettys"],"gd71-02-24.sbd.orf.114.sbeok.shnf":["young_bettys"],"gd1971-04-04.sbd.miller.110325.flac16":["young_bettys"],"gd71-04-05.sbd.stephens.16606.sbeok.shnf":["young_bettys"],"gd1971-04-06.sbd.cantor.gmb.96299.flac16":["young_bettys"],"gd71-04-07.sbd.orf.119.sbeok.shnf":["young_bettys"],"gd1971-04-08.141099.sbd.betty.pcm.dalton.miller.clugston.flac1644":["young_bettys"],"gd1971-04-25.sbd.matera.113038.sbeok.flac16":["young_bettys"],"gd1971-04-26.sbd.miller.105814.flac16":["young_bettys"],"gd71-04-27.sbd.murphy.2221.sbeok.shnf":["young_bettys"],"gd1971-04-28.sbd.miller.106099.flac16":["young_bettys"],"gd71-04-29.sbd.frisco.16782.sbeok.shnf":["young_bettys"],"gd1971-08-06.sbd.miller.96541.sbeok.flac16":["young_bettys"],"gd71-12-14.sbd.deibert.12763.sbeok.shnf":["young_bettys"],"gd1971-12-15.sbd.miller.97718.sbeok.flac16":["young_bettys"],"gd1972-03-21.sbd.miller.92395.sbeok.flac16":["young_bettys"],"gd1972-03-22.132726.sbd.miller.flac16":["young_bettys"],"gd1972-03-23.sbd.miller.100000.sbeok.flac16":["young_bettys"],"gd1972-03-25.136684.sbd.sirmick.flac1648":["young_bettys"],"gd1972-03-26.133303.sbd.miller.flac16":["young_bettys"],"gd1972-03-27.132366.sbd.miller.flac16":["young_bettys"],"gd1972-03-28.132729.sbd.miller.flac16":["young_bettys"],"gd72-04-08.sbd.giles-jeffm.2534.sbeok.shnf":["young_bettys"],"gd1972-04-08.sbd.miller.83714.sbeok.flac16":["young_bettys"],"gd1972-04-26.136637.sbd.mr.sirmickflac1648":["young_bettys"],"gd72-05-03.sbd.masse.142.sbeok.shnf":["young_bettys"],"gd1972-05-04.sbd.miller.77294.sbeok.flac16":["young_bettys"],"gd72-05-07.sbd-aud.clugston.9193.sbeok.shnf":["young_bettys"],"gd72-05-26.sbd.hollister.12758.sbeok.shnf":["young_bettys"],"gd1972-07-18.sbd.miller.32878.flac16":["young_bettys"],"gd72-08-12.sbd.hamilton.3327.sbeok.shnf":["young_bettys"],"gd1972-08-20.sbd.miller.83733.flac16":["young_bettys"],"gd72-08-21.sbd.hamilton.150.sbeok.shnf":["young_bettys"],"gd1972-08-22.sbd.miller.27780.shnf":["young_bettys"],"gd72-08-24.sbd.miller.18093.sbeok.shnf":["young_bettys"],"gd1972-08-25.sbd.miller.92840.sbeok.flac16":["young_bettys"],"gd72-08-27.sbd.orf.3328.sbeok.shnf":["young_bettys"],"gd72-09-21.sbd.masse.7296.sbeok.shnf":["young_bettys"],"gd1972-11-19.122784.sbd.miller-gans.flac24":["young_bettys"],"gd73-02-09.sbd.bertha-fink.14939.sbeok.shnf":["young_bettys"],"gd73-02-15.sbd.hall.1580.sbeok.shnf":["young_bettys"],"gd1973-02-21.sbd.miller.111120.flac16":["young_bettys"],"gd73-02-22.pset2-sbd.carman.12215.sbeok.shnf":["young_bettys"],"gd73-03-24.sbd.bertha-ashley.25508.sbeok.shnf":["young_bettys"],"gd73-06-10.sbd.hollister.174.sbeok.shnf":["young_bettys"],"gd1973-06-22.sbd.miller.88526.sbeok.flac16":["young_bettys"],"gd1973-06-24.sbd.miller.99852.sbeok.flac16":["young_bettys"],"gd73-07-28.sbd.weiner.14196.sbeok.shnf":["young_bettys"],"gd73-11-11.sbd.schlissel.14105.sbeok.shnf":["young_bettys"],"gd73-11-14.sbd.vernon.5612.sbeok.shnf":["young_bettys"],"gd74-02-22.sbd.patched.sirmick.21539.sbeok.shnf":["wall_of_sound"],"gd74-02-23.sbd.bertha-ashley.26362.sbeok.shnf":["wall_of_sound"],"gd74-02-24.sbd.windsor.199.sbefail.shnf":["wall_of_sound"],"gd1974-03-23.sbd.clugston-orf.1995.sbeok.shnf":["wall_of_sound"],"gd74-05-12.sbd.sacks.2224.sbeok.shnf":["wall_of_sound"],"gd74-05-14.sbd.murphy.1823.sbeok.shnf":["wall_of_sound"],"gd1974-05-17.sbd.miller.89972.sbeok.flac16":["wall_of_sound"],"gd74-05-19.sbd.clugston.6957.sbeok.shnf":["wall_of_sound"],"gd1974-05-21.sbd.kaplan.1347.shnf":["wall_of_sound"],"gd1974-06-08.sbd.miller.97268.sbeok.flac16":["wall_of_sound"],"gd74-06-16.sbd.fink.17701.sbeok.shnf":["wall_of_sound"],"gd74-06-18.sbd.sacks.209.sbefail.shnf":["wall_of_sound"],"gd74-06-20.sbd.clugston.2179.sbeok.shnf":["wall_of_sound"],"gd74-06-22.sbd.obv.30972.flacf":["wall_of_sound"],"gd1974-06-23.sbd.matrix-sb21b.chappell.83489.flac16":["wall_of_sound"],"gd1974-06-26.119613.mtx.dusborne.flac16":["wall_of_sound"],"gd1974-06-28.139780.sbd.miller.fixed.flac1644":["wall_of_sound"],"gd1974-06-30.sbd.miller.96275.sbeok.flac16":["wall_of_sound"],"gd74-07-19.sbd.symons.12381.sbeok.shnf":["wall_of_sound"],"gd74-07-25.sbd.fink.1072.sbeok.shnf":["wall_of_sound"],"gd74-07-27.sbd.kaplan.2420.sbeok.shnf":["wall_of_sound"],"gd1974-07-29.sbd.miller.107756.flac16":["wall_of_sound"],"gd1974-07-31.sbd.miller.32353.sbeok.flac16":["wall_of_sound"],"gd1974-08-04.mtx.seamons.100653.sbeok.flac16":["wall_of_sound"],"gd1974-08-05.131660.mtx.dusborne.flac16":["wall_of_sound"],"gd74-08-06.sbd.deadlists.1463.sbeok.shnf":["wall_of_sound"],"gd1974-09-09.135655.sbd.new.patched.miller.flac16":["wall_of_sound"],"gd1974-09-10.135699.sbd.new.patched.miller.flac16":["wall_of_sound"],"gd1974-09-11.sbd.unknown.4647.shnf":["wall_of_sound"],"gd74-09-18.sbd.miller.20732.sbeok.shnf":["wall_of_sound"],"gd1974-09-20.131529.sbd.miller.flac16":["wall_of_sound"],"gd74-09-21.sbd.miller.30654.sbeok.flacf":["wall_of_sound"],"gd1974-10-16.131539.mtx.dusborne.flac16":["wall_of_sound"],"gd74-10-17.sbd.barbella.16189.sbeok.shnf":["wall_of_sound"],"gd74-10-18.sbd.bertha-ashley.22796.sbeok.shnf":["wall_of_sound"],"gd74-10-19.sbd.miller.21927.sbeok.shnf":["wall_of_sound"],"gd1974-10-20.sbd.smith-lee.GEMS.97193.flac16":["wall_of_sound"],"gd77-02-26.sbd.alphadog.9752.sbeok.shnf":["cornell_and_company"],"gd77-03-18.sbd.unknown.254.sbeok.shnf":["cornell_and_company"],"gd1977-03-19.123190.sbd.miller.flac16":["cornell_and_company"],"gd77-04-22.sbd.cotsman.10148.sbeok.shnf":["cornell_and_company"],"gd1977-04-23.mtx.seamons.97596.sbeok.flac16":["cornell_and_company"],"gd77-04-25.sbd.symons.15879.sbeok.shnf":["cornell_and_company"],"gd1977-04-27.sbd.braverman.7799.shnf":["cornell_and_company"],"gd77-04-29.moore.unknown.7113.sbeok.shnf":["cornell_and_company"],"gd77-04-30.moore.minches.17952.sbeok.shnf":["cornell_and_company"],"gd1977-05-04.sbd.miller.91970.sbeok.flac16":["cornell_and_company"],"gd77-05-05.sbd.stephens.8832.sbeok.shnf":["cornell_and_company"],"gd77-05-07.sbd.eaton.wizard.26085.sbeok.shnf":["cornell_and_company"],"gd77-05-08.sbd.hicks.4982.sbeok.shnf":["cornell_and_company"],"gd77-05-09.sbd.connor.8304.sbeok.shnf":["cornell_and_company"],"gd77-05-11.sbd.barbella.8374.sbeok.shnf":["cornell_and_company"],"gd77-05-13.sbd.miller.9393.sbeok.shnf":["cornell_and_company"],"gd77-05-17.sbd.weiner.18554.sbeok.shnf":["cornell_and_company"],"gd1977-05-18.sbd.miller.79012.flac16":["cornell_and_company"],"gd77-05-19.sbd.direwolf.3120.sbeok.shnf":["cornell_and_company"],"gd1977-05-21.139573.sbd.gastwirt.miller.sirmick.flac1644":["cornell_and_company"],"gd1977-05-22.140278.sbd.miller.flac2496":["cornell_and_company"],"gd77-05-25.sbd.shannon.13399.sbefail.shnf":["cornell_and_company"],"gd77-05-26.sbd.sacks.3224.sbeok.shnf":["cornell_and_company"],"gd1977-06-08.mtx.seamons.95361.sbeok.flac16":["cornell_and_company"],"gd1977-06-09.28614.sbeok.flac16":["cornell_and_company"],"gd77-09-03.sbd.unk.276.sbefixed.shnf":["cornell_and_company"],"gd77-09-28.sbd.connor.10482.sbeok.shnf":["cornell_and_company"],"gd1977-10-01.sbd.cantor.gmb.86234.sbeok.flac16":["cornell_and_company"],"gd77-10-02.sbd.unknown.278.sbeok.shnf":["cornell_and_company"],"gd1977-10-07.sbd-set2.miller.79020.sbeok.flac16":["cornell_and_company"],"gd1977-10-09.sbd.miller.88961.sbeok.flac16":["cornell_and_company"],"gd77-10-11.sbd.cotsman.19290.sbeok.shnf":["cornell_and_company"],"gd1977-10-28.sbd.miller.96159.sbeok.flac16":["cornell_and_company"],"gd1977-10-29.sbd.miller.92085.sbeok.flac16":["cornell_and_company"],"gd77-10-30.sbd.nawrocki.14946.sbeok.shnf":["cornell_and_company"],"gd77-11-01.sbd.jeffm.2485.sbeok.shnf":["cornell_and_company"],"gd77-11-04.sbd.unknown.2595.sbeok.shnf":["cornell_and_company"],"gd77-11-05.sbd.clugston.6934.sbeok.shnf":["cornell_and_company"],"gd77-11-06.sbd.nawrocki.283.sbeok.shnf":["cornell_and_company"],"gd77-12-27.sbd.cotsman.19288.sbeok.shnf":["cornell_and_company"],"gd1977-12-29.137198.sbd.miller.flac1648":["cornell_and_company"],"gd1977-12-30.132379.sbd.miller.flac16":["cornell_and_company"],"gd79-04-22.sbd.bennett.12001.sbeok.shnf":["new_animal"],"gd1979-05-05.sbd.miller.fishmanj-repitch.78748.flac16":["new_animal"],"gd79-08-04.sbd.munder.9578.sbeok.shnf":["new_animal"],"gd1979-09-02.sbd.miller.93011.sbeok.flac16":["new_animal"],"gd79-10-25.sbd.set2.fishman.21271.sbefail.shnf":["new_animal"],"gd79-10-27.sbd.clugston.13980.sbeok.shnf":["new_animal"],"gd79-10-31.sbd.miller.29410.sbeok.flacf":["new_animal"],"gd1979-11-01.sbd.miller.23445.shnf":["new_animal"],"gd79-11-02.sbd.macdonald.7920.sbeok.shnf":["new_animal"],"gd79-11-06.sbd.clugston.2417.sbeok.shnf":["new_animal"],"gd79-11-09.sbd.stern.318.sbeok.shnf":["new_animal"],"gd79-11-10.sbd.clugston.14108.sbeok.shnf":["new_animal"],"gd1979-12-26.sbd.evans.gems.81323.sbeok.flac16":["new_animal"],"gd79-12-28.sbd.lai.4145.sbefail.shnf":["new_animal"],"gd79-12-30.sbd.ladner.4797.sbeok.shnf":["new_animal"],"gd79-12-31.sbd.hinko.17281.sbeok.shnf":["new_animal"],"gd1980-01-13.sbd.miller.106517.flac16":["new_animal"],"gd1980-03-30.sbd.miller.92666.sbeok.flac16":["new_animal"],"gd1980-05-15.126692.mtx.dusborne.flac16":["new_animal"],"gd80-05-16.sbd.clugston.7472.sbeok.shnf":["new_animal"],"gd1980-06-20.sbd.bertha.tetzeli.fix-25468.73846.reflac.flac16":["new_animal"],"gd1980-08-19.sbd.miller.88172.sbeok.flac16":["new_animal"],"gd80-09-02.sbd.miller.28299.sbeok.flacf":["new_animal"],"gd1980-10-04.151437.sbd.1st-gen.miller.t.flac16":["new_animal"],"gd80-10-14.sbd-aud.gardner.3828.sbeok.shnf":["new_animal"],"gd80-10-26.sbd.hinko.18862.sbeok.shnf":["new_animal"],"gd1980-10-30.139599.sbd.bershaw.flac16":["new_animal"],"gd80-10-31.sbd-preFM.cousinit.20377.sbeok.shnf":["new_animal"],"gd80-11-28.sbd.vernon.20049.sbeok.shnf":["new_animal"],"gd80-11-30.sbd-aud.sacks.2416.sbeok.shnf":["new_animal"],"gd1980-12-26.121531.upg-sbd.tobin.flac16":["new_animal"],"gd80-12-28.sbd.cousinit.17421.sbeok.shnf":["new_animal"],"gd80-12-31.sbd.gorinsky.6391.sbeok.shnf":["new_animal"]}; // injected below
+
 async function fetchData() {
   const headers = {
     'apikey': SUPABASE_KEY,
     'Authorization': `Bearer ${SUPABASE_KEY}`
   };
-
   const res = await fetch(`${SUPABASE_URL}/rest/v1/gd_bootleg_listening_log?select=*&order=listened_date.desc&limit=1000`, { headers });
   return await res.json();
 }
@@ -337,7 +340,7 @@ function getToday() {
 
 function formatDate(d) {
   const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const dt = new Date(d);
+  const dt = new Date(d + 'T00:00:00');
   return `${months[dt.getMonth()]} ${dt.getDate()}`;
 }
 
@@ -356,9 +359,9 @@ function render(data) {
 
   const today = getToday();
 
-  // Top stats
+  // Top stats — use correct field names: show_identifier, show_date, show_venue, listened_date
   const playsToday = data.filter(d => d.listened_date && d.listened_date.startsWith(today)).length;
-  const uniqueShows = new Set(data.map(d => d.identifier)).size;
+  const uniqueShows = new Set(data.map(d => d.show_identifier).filter(Boolean)).size;
   const uniqueDays = new Set(data.map(d => d.listened_date ? d.listened_date.split('T')[0] : null).filter(Boolean)).size;
 
   document.getElementById('plays-today').textContent = playsToday;
@@ -390,22 +393,21 @@ function render(data) {
     return `<div class="bar" style="height:${height}%" title="${label}: ${count}"><span class="bar-label">${d === today ? '▪' : ''}</span></div>`;
   }).join('');
 
-  // Collection breakdown
+  // Collection breakdown — look up collections from SHOW_COLLECTIONS map
   const collCounts = {};
   data.forEach(d => {
-    const cases = d.cases || d.collection || '';
-    for (const [id, name] of Object.entries(COLLECTIONS)) {
-      if (cases.includes(id)) {
-        collCounts[id] = (collCounts[id] || 0) + 1;
-      }
-    }
+    const ident = d.show_identifier || '';
+    const cases = SHOW_COLLECTIONS[ident] || [];
+    cases.forEach(c => {
+      collCounts[c] = (collCounts[c] || 0) + 1;
+    });
   });
 
   const maxColl = Math.max(...Object.values(collCounts), 1);
   const barsEl = document.getElementById('collection-bars');
   barsEl.innerHTML = Object.entries(COLLECTIONS).map(([id, name]) => {
     const count = collCounts[id] || 0;
-    const pct = (count / maxColl) * 100;
+    const pct = maxColl > 0 ? (count / maxColl) * 100 : 0;
     return `<div class="collection-bar">
       <div class="collection-name">${name}</div>
       <div class="collection-fill"><div class="collection-fill-inner" style="width:${pct}%"></div></div>
@@ -413,15 +415,15 @@ function render(data) {
     </div>`;
   }).join('');
 
-  // Top shows
+  // Top shows — use show_identifier, show_date, show_venue
   const showCounts = {};
   const showMeta = {};
   data.forEach(d => {
-    const id = d.identifier || '';
+    const id = d.show_identifier || '';
     if (!id) return;
     showCounts[id] = (showCounts[id] || 0) + 1;
     if (!showMeta[id]) {
-      showMeta[id] = { date: d.show_date || d.date || '', venue: d.venue || '' };
+      showMeta[id] = { date: d.show_date || '', venue: d.show_venue || '' };
     }
   });
 
@@ -452,9 +454,9 @@ function render(data) {
   } else {
     recentEl.innerHTML = recent.map(d => {
       const date = d.listened_date ? formatDate(d.listened_date) : '';
-      const label = d.show_date || d.date || d.identifier || '';
+      const label = d.show_date || d.show_identifier || '';
       return `<div class="list-item">
-        <span class="list-name">${label}${d.venue ? ' — ' + d.venue : ''}</span>
+        <span class="list-name">${label}${d.show_venue ? ' — ' + d.show_venue : ''}</span>
         <span class="list-value" style="font-size:11px; color:#1a6a1a;">${date}</span>
       </div>`;
     }).join('');
