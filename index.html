@@ -255,7 +255,7 @@ const fmtDate = d => {
   if (!d) return '?';
   const m = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   const dt = new Date(d + 'T12:00:00');
-  return `${m[dt.getMonth()]} ${dt.getDate()}`;
+  return `${m[dt.getMonth()]} ${dt.getDate()}, ${dt.getFullYear()}`;
 };
 
 async function q(table, params='') {
