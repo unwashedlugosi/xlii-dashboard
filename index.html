@@ -31,33 +31,33 @@
   .header { display: flex; align-items: center; justify-content: space-between; padding: 12px 0 4px; }
   .header h1 { font-family: 'Courier New', monospace; font-size: 18px; letter-spacing: 2px; }
   .live-badge { font-size: 11px; padding: 2px 8px; border-radius: 10px; letter-spacing: 1px; font-weight: 600; background: rgba(51,255,51,0.15); color: #33ff33; border: 1px solid rgba(51,255,51,0.3); }
-  .last-updated { font-size: 10px; color: #1a5a1a; text-align: right; margin-bottom: 12px; }
+  .last-updated { font-size: 10px; color: #33aa33; text-align: right; margin-bottom: 12px; }
 
   /* NOW PLAYING */
   .now-playing { text-align: center; padding: 14px 12px; margin-bottom: 10px; border: 1px solid rgba(51,255,51,0.15); border-radius: 12px; background: rgba(51,255,51,0.02); }
   .np-count { font-family: 'Courier New', monospace; font-size: 32px; line-height: 1; margin-bottom: 4px; }
-  .np-label { font-size: 11px; color: #1a6a1a; letter-spacing: 2px; }
-  .np-shows { margin-top: 8px; font-size: 13px; color: #1a8a1a; line-height: 1.5; }
-  .np-empty { color: #1a4a1a; font-style: italic; }
+  .np-label { font-size: 11px; color: #44bb44; letter-spacing: 2px; }
+  .np-shows { margin-top: 8px; font-size: 13px; color: #55cc55; line-height: 1.5; }
+  .np-empty { color: #2a8a2a; font-style: italic; }
 
   /* STATS */
   .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
-  .stat-card { background: rgba(51,255,51,0.02); border: 1px solid rgba(51,255,51,0.08); border-radius: 10px; padding: 10px; }
+  .stat-card { background: rgba(51,255,51,0.02); border: 1px solid rgba(51,255,51,0.18); border-radius: 10px; padding: 10px; }
   .stat-value { font-family: 'Courier New', monospace; font-size: 24px; color: #33ff33; line-height: 1; }
-  .stat-label { font-size: 10px; color: #1a5a1a; letter-spacing: 1px; text-transform: uppercase; margin-top: 3px; }
-  .stat-sub { font-size: 10px; color: #1a4a1a; margin-top: 2px; }
+  .stat-label { font-size: 10px; color: #33aa33; letter-spacing: 1px; text-transform: uppercase; margin-top: 3px; }
+  .stat-sub { font-size: 10px; color: #2a8a2a; margin-top: 2px; }
 
   /* SECTION */
   .section { margin-bottom: 14px; }
-  .section-title { font-family: 'Courier New', monospace; font-size: 11px; color: #1a5a1a; letter-spacing: 2px; margin-bottom: 8px; text-transform: uppercase; }
+  .section-title { font-family: 'Courier New', monospace; font-size: 11px; color: #33aa33; letter-spacing: 2px; margin-bottom: 8px; text-transform: uppercase; }
 
   /* CHARTS */
-  .chart-box { border: 1px solid rgba(51,255,51,0.06); border-radius: 10px; padding: 10px; margin-bottom: 10px; background: rgba(51,255,51,0.01); }
+  .chart-box { border: 1px solid rgba(51,255,51,0.14); border-radius: 10px; padding: 10px; margin-bottom: 10px; background: rgba(51,255,51,0.01); }
   .bar-chart { display: flex; align-items: flex-end; gap: 2px; height: 60px; }
   .bar { flex: 1; background: rgba(51,255,51,0.25); border-radius: 2px 2px 0 0; min-height: 1px; transition: background 0.2s; position: relative; }
   .bar:hover { background: rgba(51,255,51,0.5); }
-  .bar-labels { display: flex; justify-content: space-between; margin-top: 4px; font-size: 8px; color: #1a4a1a; }
-  .bar-val { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); font-size: 8px; color: #1a6a1a; font-family: 'Courier New', monospace; }
+  .bar-labels { display: flex; justify-content: space-between; margin-top: 4px; font-size: 8px; color: #2a8a2a; }
+  .bar-val { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); font-size: 8px; color: #44bb44; font-family: 'Courier New', monospace; }
 
   /* GROWTH */
   .growth-chart { height: 50px; position: relative; }
@@ -65,18 +65,18 @@
 
   /* COLLECTION BARS */
   .collection-bar { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
-  .coll-name { font-size: 10px; color: #1a6a1a; width: 80px; text-align: right; letter-spacing: 1px; }
-  .coll-fill { flex: 1; height: 16px; background: rgba(51,255,51,0.06); border-radius: 3px; overflow: hidden; }
+  .coll-name { font-size: 10px; color: #44bb44; width: 80px; text-align: right; letter-spacing: 1px; }
+  .coll-fill { flex: 1; height: 16px; background: rgba(51,255,51,0.14); border-radius: 3px; overflow: hidden; }
   .coll-fill-inner { height: 100%; background: rgba(51,255,51,0.25); border-radius: 3px; transition: width 0.5s; }
   .coll-count { font-family: 'Courier New', monospace; font-size: 11px; color: #33ff33; width: 28px; }
 
   /* LISTS */
-  .list-item { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; border-bottom: 1px solid rgba(51,255,51,0.04); font-size: 13px; }
+  .list-item { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; border-bottom: 1px solid rgba(51,255,51,0.12); font-size: 13px; }
   .list-item:last-child { border-bottom: none; }
-  .list-rank { font-family: 'Courier New', monospace; font-size: 11px; color: #1a5a1a; width: 20px; }
-  .list-name { flex: 1; color: #1e9e1e; margin-left: 4px; font-size: 12px; }
+  .list-rank { font-family: 'Courier New', monospace; font-size: 11px; color: #33aa33; width: 20px; }
+  .list-name { flex: 1; color: #55dd55; margin-left: 4px; font-size: 12px; }
   .list-val { font-family: 'Courier New', monospace; font-size: 12px; color: #33ff33; margin-left: 8px; }
-  .empty { text-align: center; padding: 12px; color: #1a4a1a; font-size: 12px; }
+  .empty { text-align: center; padding: 12px; color: #2a8a2a; font-size: 12px; }
 
   /* HOURS */
   .hours-chart { display: flex; align-items: flex-end; gap: 1px; height: 40px; }
@@ -154,14 +154,14 @@
     <div class="bar-chart" id="daily-chart"></div>
     <div class="bar-labels"><span>14 days ago</span><span>today</span></div>
   </div>
-  <div style="font-size:9px; color:#1a4a1a; text-align:right; margin-top:-6px;">bars = plays per day</div>
+  <div style="font-size:9px; color:#2a8a2a; text-align:right; margin-top:-6px;">bars = plays per day</div>
 </div>
 
 <!-- CUMULATIVE GROWTH -->
 <div class="section">
   <div class="section-title">Growth</div>
   <div class="chart-box">
-    <div style="display:flex; justify-content:space-between; font-size:9px; color:#1a4a1a; margin-bottom:4px;">
+    <div style="display:flex; justify-content:space-between; font-size:9px; color:#2a8a2a; margin-bottom:4px;">
       <span>total plays over time</span>
       <span id="growth-label"></span>
     </div>
@@ -204,12 +204,12 @@
       <div class="stat-value" style="font-size:18px;" id="e-opens">—</div>
       <div class="stat-label">App Opens</div>
     </div>
-    <div style="display:flex; align-items:center; color:#1a4a1a; font-size:18px;">→</div>
+    <div style="display:flex; align-items:center; color:#2a8a2a; font-size:18px;">→</div>
     <div class="stat-card" style="flex:1;">
       <div class="stat-value" style="font-size:18px;" id="e-plays">—</div>
       <div class="stat-label">Played a Show</div>
     </div>
-    <div style="display:flex; align-items:center; color:#1a4a1a; font-size:18px;">→</div>
+    <div style="display:flex; align-items:center; color:#2a8a2a; font-size:18px;">→</div>
     <div class="stat-card" style="flex:1;">
       <div class="stat-value" style="font-size:18px;" id="e-rate">—</div>
       <div class="stat-label">Play Rate</div>
@@ -389,7 +389,7 @@ async function refresh() {
   document.getElementById('recent').innerHTML = recent.length === 0 ? '<div class="empty">No data yet</div>' :
     recent.map(d => {
       const when = d.listened_date ? fmtDate(d.listened_date) : '';
-      return `<div class="list-item"><span class="list-name">${d.show_date?fmtDate(d.show_date):'?'}${d.show_venue?' — '+d.show_venue:''}</span><span class="list-val" style="font-size:10px;color:#1a5a1a;">${when}</span></div>`;
+      return `<div class="list-item"><span class="list-name">${d.show_date?fmtDate(d.show_date):'?'}${d.show_venue?' — '+d.show_venue:''}</span><span class="list-val" style="font-size:10px;color:#33aa33;">${when}</span></div>`;
     }).join('');
 
   document.getElementById('last-updated').textContent = 'Updated ' + new Date().toLocaleTimeString();
