@@ -356,11 +356,11 @@ async function refresh() {
     return `<div class="collection-bar"><div class="coll-name">${name}</div><div class="coll-fill"><div class="coll-fill-inner" style="width:${maxColl>0?(c/maxColl)*100:0}%"></div></div><div class="coll-count">${c}</div></div>`;
   }).join('');
 
-  // PEAK HOURS
+  // PEAK HOURS — use analytics timestamps (listening_log only has dates)
   const hourCounts = new Array(24).fill(0);
-  plays.forEach(d => {
-    if (d.listened_date && d.listened_date.includes('T')) {
-      const h = parseInt(d.listened_date.split('T')[1]?.split(':')[0] || '0');
+  analytics.forEach(d => {
+    if (d.created_at && d.created_at.includes('T')) {
+      const h = new Date(d.created_at).getHours();
       hourCounts[h]++;
     }
   });
