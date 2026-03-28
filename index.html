@@ -89,9 +89,6 @@
   .users-bar .users-fill { background: rgba(51,255,51,0.35); position: absolute; bottom: 0; left: 0; right: 0; border-radius: 2px 2px 0 0; }
 
   /* ANNOUNCEMENT */
-  .ann-section { margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(51,255,51,0.15); }
-  .ann-input { width: 100%; background: rgba(51,255,51,0.05); border: 1px solid rgba(51,255,51,0.15); border-radius: 6px; color: #33ff33; font-family: 'Courier New', monospace; font-size: 14px; padding: 8px 10px; margin-bottom: 6px; outline: none; }
-  .ann-btn { flex: 1; border-radius: 6px; font-family: 'Courier New', monospace; font-size: 13px; padding: 8px; cursor: pointer; border: 1px solid; }
   .ann-on { background: rgba(51,255,51,0.1); border-color: rgba(51,255,51,0.3); color: #33ff33; }
   .ann-off { background: rgba(255,60,60,0.1); border-color: rgba(255,60,60,0.3); color: #ff4444; }
 
@@ -220,19 +217,6 @@
   </div>
 </div>
 
-<!-- ANNOUNCEMENT CONTROL -->
-<div class="section ann-section">
-  <div class="section-title">Announcement Control</div>
-  <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
-    <span style="font-size:11px; color:#1a5a1a; letter-spacing:1px;">STATUS:</span>
-    <span id="ann-status" style="font-family:'Courier New',monospace; font-size:13px;">—</span>
-  </div>
-  <input id="ann-image-url" type="text" placeholder="Image URL (full https:// URL)" class="ann-input">
-  <div style="display:flex; gap:8px;">
-    <button onclick="toggleAnnouncement(true)" class="ann-btn ann-on">ACTIVATE</button>
-    <button onclick="toggleAnnouncement(false)" class="ann-btn ann-off">DEACTIVATE</button>
-  </div>
-</div>
 
 <div style="height:40px;"></div>
 
@@ -414,45 +398,6 @@ async function refresh() {
 refresh();
 setInterval(refresh, 60000);
 
-// Announcement control
-async function loadAnnouncement() {
-  try {
-    const res = await fetch(`${SB_URL}/rest/v1/xlii_announcements?order=updated_at.desc&limit=1`, { headers: H });
-    const data = await res.json();
-    if (data && data.length > 0) {
-      const ann = data[0];
-      document.getElementById('ann-image-url').value = ann.image_url || '';
-      document.getElementById('ann-status').textContent = ann.active ? 'ACTIVE' : 'OFF';
-      document.getElementById('ann-status').style.color = ann.active ? '#33ff33' : '#1a5a1a';
-    }
-  } catch(e) {}
-}
-
-async function toggleAnnouncement(activate) {
-  const imageUrl = document.getElementById('ann-image-url').value.trim();
-  if (activate && !imageUrl) { alert('Enter an image URL first'); return; }
-
-  try {
-    await fetch(`${SB_URL}/rest/v1/xlii_announcements?active=eq.true`, {
-      method: 'PATCH',
-      headers: { ...H, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
-      body: JSON.stringify({ active: false })
-    });
-
-    if (activate) {
-      await fetch(`${SB_URL}/rest/v1/xlii_announcements`, {
-        method: 'POST',
-        headers: { ...H, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
-        body: JSON.stringify({ id: 'ann-' + Date.now(), image_url: imageUrl, message: imageUrl, active: true, updated_at: new Date().toISOString() })
-      });
-    }
-
-    document.getElementById('ann-status').textContent = activate ? 'ACTIVE' : 'OFF';
-    document.getElementById('ann-status').style.color = activate ? '#33ff33' : '#1a5a1a';
-  } catch(e) { console.error('Announcement update failed:', e); }
-}
-
-loadAnnouncement();
 </script>
 </body>
 </html>
