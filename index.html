@@ -388,6 +388,23 @@
   <div id="recent"></div>
 </div>
 
+<!-- ANNOUNCEMENT CONTROL -->
+<div class="section" style="margin-top:20px; padding-top:16px; border-top:1px solid rgba(51,255,51,0.15);">
+  <div class="section-title">Announcement</div>
+  <div style="margin-bottom:10px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span style="font-size:11px; color:#1a5a1a; letter-spacing:1px;">STATUS:</span>
+      <span id="ann-status" style="font-family:'Courier New',monospace; font-size:13px;">—</span>
+    </div>
+    <input id="ann-title" type="text" placeholder="Title (optional)" style="width:100%; background:rgba(51,255,51,0.05); border:1px solid rgba(51,255,51,0.15); border-radius:6px; color:#33ff33; font-family:'Courier New',monospace; font-size:14px; padding:8px 10px; margin-bottom:6px; outline:none;">
+    <textarea id="ann-message" placeholder="Message text" rows="3" style="width:100%; background:rgba(51,255,51,0.05); border:1px solid rgba(51,255,51,0.15); border-radius:6px; color:#33ff33; font-family:'Courier New',monospace; font-size:14px; padding:8px 10px; margin-bottom:8px; outline:none; resize:vertical;"></textarea>
+    <div style="display:flex; gap:8px;">
+      <button id="ann-activate" onclick="toggleAnnouncement(true)" style="flex:1; background:rgba(51,255,51,0.1); border:1px solid rgba(51,255,51,0.3); border-radius:6px; color:#33ff33; font-family:'Courier New',monospace; font-size:13px; padding:8px; cursor:pointer;">ACTIVATE</button>
+      <button id="ann-deactivate" onclick="toggleAnnouncement(false)" style="flex:1; background:rgba(255,60,60,0.1); border:1px solid rgba(255,60,60,0.3); border-radius:6px; color:#ff4444; font-family:'Courier New',monospace; font-size:13px; padding:8px; cursor:pointer;">DEACTIVATE</button>
+    </div>
+  </div>
+</div>
+
 <script>
 const SB_URL = 'https://dhwllgdxpeucldtmzhme.supabase.co';
 const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRod2xsZ2R4cGV1Y2xkdG16aG1lIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzAyMzI2NTMsImV4cCI6MjA4NTgwODY1M30.PmDxpoWXP0zA2sJLgRxAfODH1JcjdFOoRMdnGZwJYLE';
@@ -571,6 +588,65 @@ async function refresh() {
 
 refresh();
 setInterval(refresh, 60000);
+
+// Announcement control
+async function loadAnnouncement() {
+  try {
+    const res = await fetch(`${SB_URL}/rest/v1/xlii_announcements?order=updated_at.desc&limit=1`, { headers: H });
+    const data = await res.json();
+    if (data && data.length > 0) {
+      const ann = data[0];
+      document.getElementById('ann-title').value = ann.title || '';
+      document.getElementById('ann-message').value = ann.message || '';
+      document.getElementById('ann-status').textContent = ann.active ? 'ACTIVE' : 'OFF';
+      document.getElementById('ann-status').style.color = ann.active ? '#33ff33' : '#1a5a1a';
+    }
+  } catch(e) {}
+}
+
+async function toggleAnnouncement(activate) {
+  const title = document.getElementById('ann-title').value.trim();
+  const message = document.getElementById('ann-message').value.trim();
+
+  if (activate && !message) {
+    alert('Enter a message first');
+    return;
+  }
+
+  const id = activate ? 'ann-' + Date.now() : 'default';
+  const body = {
+    id: id,
+    title: title,
+    message: message,
+    active: activate,
+    updated_at: new Date().toISOString()
+  };
+
+  try {
+    // Deactivate all existing
+    await fetch(`${SB_URL}/rest/v1/xlii_announcements?active=eq.true`, {
+      method: 'PATCH',
+      headers: { ...H, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
+      body: JSON.stringify({ active: false })
+    });
+
+    if (activate) {
+      // Insert new active announcement
+      await fetch(`${SB_URL}/rest/v1/xlii_announcements`, {
+        method: 'POST',
+        headers: { ...H, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
+        body: JSON.stringify(body)
+      });
+    }
+
+    document.getElementById('ann-status').textContent = activate ? 'ACTIVE' : 'OFF';
+    document.getElementById('ann-status').style.color = activate ? '#33ff33' : '#1a5a1a';
+  } catch(e) {
+    console.error('Announcement update failed:', e);
+  }
+}
+
+loadAnnouncement();
 </script>
 </body>
 </html>
