@@ -28,277 +28,76 @@
     z-index: 1000;
   }
 
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 0 4px;
-  }
-  .header h1 {
-    font-family: 'Courier New', monospace;
-    font-size: 18px;
-    letter-spacing: 2px;
-  }
-  .live-badge {
-    font-size: 11px;
-    padding: 2px 8px;
-    border-radius: 10px;
-    letter-spacing: 1px;
-    font-weight: 600;
-    background: rgba(51,255,51,0.15);
-    color: #33ff33;
-    border: 1px solid rgba(51,255,51,0.3);
-  }
-  .last-updated {
-    font-size: 10px;
-    color: #1a5a1a;
-    text-align: right;
-    margin-bottom: 12px;
-  }
+  .header { display: flex; align-items: center; justify-content: space-between; padding: 12px 0 4px; }
+  .header h1 { font-family: 'Courier New', monospace; font-size: 18px; letter-spacing: 2px; }
+  .live-badge { font-size: 11px; padding: 2px 8px; border-radius: 10px; letter-spacing: 1px; font-weight: 600; background: rgba(51,255,51,0.15); color: #33ff33; border: 1px solid rgba(51,255,51,0.3); }
+  .last-updated { font-size: 10px; color: #1a5a1a; text-align: right; margin-bottom: 12px; }
 
-  /* NOW PLAYING — hero section */
-  .now-playing {
-    text-align: center;
-    padding: 16px 12px;
-    margin-bottom: 12px;
-    border: 1px solid rgba(51,255,51,0.15);
-    border-radius: 12px;
-    background: rgba(51,255,51,0.02);
-  }
-  .np-count {
-    font-family: 'Courier New', monospace;
-    font-size: 32px;
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-  .np-label {
-    font-size: 11px;
-    color: #1a6a1a;
-    letter-spacing: 2px;
-  }
-  .np-shows {
-    margin-top: 8px;
-    font-size: 13px;
-    color: #1a8a1a;
-    line-height: 1.5;
-  }
-  .np-empty {
-    font-size: 13px;
-    color: #1a4a1a;
-    font-style: italic;
-  }
+  /* NOW PLAYING */
+  .now-playing { text-align: center; padding: 14px 12px; margin-bottom: 10px; border: 1px solid rgba(51,255,51,0.15); border-radius: 12px; background: rgba(51,255,51,0.02); }
+  .np-count { font-family: 'Courier New', monospace; font-size: 32px; line-height: 1; margin-bottom: 4px; }
+  .np-label { font-size: 11px; color: #1a6a1a; letter-spacing: 2px; }
+  .np-shows { margin-top: 8px; font-size: 13px; color: #1a8a1a; line-height: 1.5; }
+  .np-empty { color: #1a4a1a; font-style: italic; }
 
-  /* SHOW OF THE WEEK */
-  .show-week {
-    padding: 12px;
-    margin-bottom: 12px;
-    border: 1px solid rgba(51,255,51,0.1);
-    border-radius: 10px;
-    background: rgba(51,255,51,0.015);
-    text-align: center;
-  }
-  .sw-label {
-    font-size: 10px;
-    color: #1a5a1a;
-    letter-spacing: 2px;
-    margin-bottom: 4px;
-  }
-  .sw-show {
-    font-family: 'Courier New', monospace;
-    font-size: 16px;
-    color: #33ff33;
-  }
-  .sw-venue {
-    font-size: 12px;
-    color: #1a8a1a;
-    margin-top: 2px;
-  }
-  .sw-plays {
-    font-size: 11px;
-    color: #1a6a1a;
-    margin-top: 4px;
-  }
+  /* STATS */
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+  .stat-card { background: rgba(51,255,51,0.02); border: 1px solid rgba(51,255,51,0.08); border-radius: 10px; padding: 10px; }
+  .stat-value { font-family: 'Courier New', monospace; font-size: 24px; color: #33ff33; line-height: 1; }
+  .stat-label { font-size: 10px; color: #1a5a1a; letter-spacing: 1px; text-transform: uppercase; margin-top: 3px; }
+  .stat-sub { font-size: 10px; color: #1a4a1a; margin-top: 2px; }
 
-  /* STAT CARDS */
-  .stats-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 8px;
-    margin-bottom: 12px;
-  }
-  .stat-card {
-    background: rgba(51,255,51,0.02);
-    border: 1px solid rgba(51,255,51,0.08);
-    border-radius: 10px;
-    padding: 10px 8px;
-    text-align: center;
-  }
-  .stat-value {
-    font-family: 'Courier New', monospace;
-    font-size: 22px;
-    color: #33ff33;
-    line-height: 1;
-  }
-  .stat-label {
-    font-size: 9px;
-    color: #1a5a1a;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-top: 3px;
-  }
-
-  /* FUNNEL */
-  .funnel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 12px;
-    padding: 10px;
-    border: 1px solid rgba(51,255,51,0.08);
-    border-radius: 10px;
-    background: rgba(51,255,51,0.015);
-    font-family: 'Courier New', monospace;
-    font-size: 14px;
-  }
-  .funnel-num { color: #33ff33; }
-  .funnel-label { color: #1a5a1a; font-size: 10px; letter-spacing: 1px; }
-  .funnel-arrow { color: #1a4a1a; font-size: 16px; }
-
-  /* SECTION TITLES */
-  .section-title {
-    font-family: 'Courier New', monospace;
-    font-size: 11px;
-    color: #1a5a1a;
-    letter-spacing: 2px;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-  }
+  /* SECTION */
+  .section { margin-bottom: 14px; }
+  .section-title { font-family: 'Courier New', monospace; font-size: 11px; color: #1a5a1a; letter-spacing: 2px; margin-bottom: 8px; text-transform: uppercase; }
 
   /* CHARTS */
-  .chart-box {
-    border: 1px solid rgba(51,255,51,0.06);
-    border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 12px;
-    background: rgba(51,255,51,0.01);
-  }
-  .bar-chart {
-    display: flex;
-    align-items: flex-end;
-    gap: 2px;
-    height: 60px;
-  }
-  .bar {
-    flex: 1;
-    background: rgba(51,255,51,0.25);
-    border-radius: 2px 2px 0 0;
-    min-height: 1px;
-    transition: background 0.2s;
-  }
+  .chart-box { border: 1px solid rgba(51,255,51,0.06); border-radius: 10px; padding: 10px; margin-bottom: 10px; background: rgba(51,255,51,0.01); }
+  .bar-chart { display: flex; align-items: flex-end; gap: 2px; height: 60px; }
+  .bar { flex: 1; background: rgba(51,255,51,0.25); border-radius: 2px 2px 0 0; min-height: 1px; transition: background 0.2s; position: relative; }
   .bar:hover { background: rgba(51,255,51,0.5); }
-  .bar-labels {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 4px;
-    font-size: 8px;
-    color: #1a4a1a;
-  }
+  .bar-labels { display: flex; justify-content: space-between; margin-top: 4px; font-size: 8px; color: #1a4a1a; }
+  .bar-val { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); font-size: 8px; color: #1a6a1a; font-family: 'Courier New', monospace; }
 
-  /* GROWTH LINE */
-  .growth-chart {
-    height: 50px;
-    position: relative;
-    margin-bottom: 12px;
-  }
-  .growth-svg {
-    width: 100%;
-    height: 100%;
-  }
+  /* GROWTH */
+  .growth-chart { height: 50px; position: relative; }
+  .growth-svg { width: 100%; height: 100%; }
 
   /* COLLECTION BARS */
-  .collection-bar {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 6px;
-  }
-  .coll-name {
-    font-size: 10px;
-    color: #1a6a1a;
-    width: 80px;
-    text-align: right;
-    letter-spacing: 1px;
-  }
-  .coll-fill {
-    flex: 1;
-    height: 16px;
-    background: rgba(51,255,51,0.06);
-    border-radius: 3px;
-    overflow: hidden;
-  }
-  .coll-fill-inner {
-    height: 100%;
-    background: rgba(51,255,51,0.25);
-    border-radius: 3px;
-    transition: width 0.5s;
-  }
-  .coll-count {
-    font-family: 'Courier New', monospace;
-    font-size: 11px;
-    color: #33ff33;
-    width: 28px;
-  }
+  .collection-bar { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .coll-name { font-size: 10px; color: #1a6a1a; width: 80px; text-align: right; letter-spacing: 1px; }
+  .coll-fill { flex: 1; height: 16px; background: rgba(51,255,51,0.06); border-radius: 3px; overflow: hidden; }
+  .coll-fill-inner { height: 100%; background: rgba(51,255,51,0.25); border-radius: 3px; transition: width 0.5s; }
+  .coll-count { font-family: 'Courier New', monospace; font-size: 11px; color: #33ff33; width: 28px; }
 
   /* LISTS */
-  .list-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 7px 0;
-    border-bottom: 1px solid rgba(51,255,51,0.04);
-    font-size: 13px;
-  }
+  .list-item { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; border-bottom: 1px solid rgba(51,255,51,0.04); font-size: 13px; }
   .list-item:last-child { border-bottom: none; }
-  .list-rank {
-    font-family: 'Courier New', monospace;
-    font-size: 11px;
-    color: #1a5a1a;
-    width: 20px;
-  }
-  .list-name {
-    flex: 1;
-    color: #1e9e1e;
-    margin-left: 4px;
-    font-size: 12px;
-  }
-  .list-val {
-    font-family: 'Courier New', monospace;
-    font-size: 12px;
-    color: #33ff33;
-    margin-left: 8px;
-  }
-
-  .section { margin-bottom: 14px; }
+  .list-rank { font-family: 'Courier New', monospace; font-size: 11px; color: #1a5a1a; width: 20px; }
+  .list-name { flex: 1; color: #1e9e1e; margin-left: 4px; font-size: 12px; }
+  .list-val { font-family: 'Courier New', monospace; font-size: 12px; color: #33ff33; margin-left: 8px; }
   .empty { text-align: center; padding: 12px; color: #1a4a1a; font-size: 12px; }
 
-  /* PEAK HOURS */
-  .hours-chart {
-    display: flex;
-    align-items: flex-end;
-    gap: 1px;
-    height: 40px;
-  }
-  .hour-bar {
-    flex: 1;
-    background: rgba(51,255,51,0.2);
-    border-radius: 1px 1px 0 0;
-    min-height: 1px;
-  }
+  /* HOURS */
+  .hours-chart { display: flex; align-items: flex-end; gap: 1px; height: 40px; }
+  .hour-bar { flex: 1; background: rgba(51,255,51,0.2); border-radius: 1px 1px 0 0; min-height: 1px; }
+
+  /* USERS PER DAY */
+  .users-chart { display: flex; align-items: flex-end; gap: 2px; height: 50px; }
+  .users-bar { flex: 1; border-radius: 2px 2px 0 0; min-height: 1px; position: relative; }
+  .users-bar .plays-fill { background: rgba(51,255,51,0.15); position: absolute; bottom: 0; left: 0; right: 0; border-radius: 2px 2px 0 0; }
+  .users-bar .users-fill { background: rgba(51,255,51,0.35); position: absolute; bottom: 0; left: 0; right: 0; border-radius: 2px 2px 0 0; }
+
+  /* ANNOUNCEMENT */
+  .ann-section { margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(51,255,51,0.15); }
+  .ann-input { width: 100%; background: rgba(51,255,51,0.05); border: 1px solid rgba(51,255,51,0.15); border-radius: 6px; color: #33ff33; font-family: 'Courier New', monospace; font-size: 14px; padding: 8px 10px; margin-bottom: 6px; outline: none; }
+  .ann-btn { flex: 1; border-radius: 6px; font-family: 'Courier New', monospace; font-size: 13px; padding: 8px; cursor: pointer; border: 1px solid; }
+  .ann-on { background: rgba(51,255,51,0.1); border-color: rgba(51,255,51,0.3); color: #33ff33; }
+  .ann-off { background: rgba(255,60,60,0.1); border-color: rgba(255,60,60,0.3); color: #ff4444; }
 
   @media (min-width: 768px) {
     body { max-width: 600px; margin: 0 auto; }
-    .stats-grid { grid-template-columns: repeat(6, 1fr); }
+    .stats-grid { grid-template-columns: repeat(3, 1fr); }
   }
 </style>
 </head>
@@ -311,52 +110,64 @@
 <div class="last-updated" id="last-updated"></div>
 
 <!-- NOW PLAYING -->
-<div class="now-playing" id="now-playing">
+<div class="now-playing">
   <div class="np-count" id="np-count">—</div>
   <div class="np-label">LISTENING NOW</div>
   <div class="np-shows" id="np-shows"></div>
 </div>
 
-<!-- SHOW OF THE WEEK -->
-<div class="show-week" id="show-week" style="display:none;">
-  <div class="sw-label">MOST PLAYED THIS WEEK</div>
-  <div class="sw-show" id="sw-show"></div>
-  <div class="sw-venue" id="sw-venue"></div>
-  <div class="sw-plays" id="sw-plays"></div>
-</div>
-
-<!-- TOP STATS -->
+<!-- TOP STATS — clear labels -->
 <div class="stats-grid">
-  <div class="stat-card"><div class="stat-value" id="s-today">—</div><div class="stat-label">Today</div></div>
-  <div class="stat-card"><div class="stat-value" id="s-total">—</div><div class="stat-label">Total Plays</div></div>
-  <div class="stat-card"><div class="stat-value" id="s-shows">—</div><div class="stat-label">Shows</div></div>
-  <div class="stat-card"><div class="stat-value" id="s-devices">—</div><div class="stat-label">Devices</div></div>
-  <div class="stat-card"><div class="stat-value" id="s-days">—</div><div class="stat-label">Days</div></div>
-  <div class="stat-card"><div class="stat-value" id="s-streak">—</div><div class="stat-label">Streak</div></div>
+  <div class="stat-card">
+    <div class="stat-value" id="s-users-today">—</div>
+    <div class="stat-label">Users Today</div>
+    <div class="stat-sub" id="s-users-today-sub"></div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value" id="s-total-users">—</div>
+    <div class="stat-label">Total Users</div>
+    <div class="stat-sub">unique devices ever</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value" id="s-plays-today">—</div>
+    <div class="stat-label">Plays Today</div>
+    <div class="stat-sub" id="s-plays-today-sub"></div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value" id="s-total-plays">—</div>
+    <div class="stat-label">Total Plays</div>
+    <div class="stat-sub">all time</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value" id="s-unique-shows">—</div>
+    <div class="stat-label">Shows Heard</div>
+    <div class="stat-sub">out of 171</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value" id="s-streak">—</div>
+    <div class="stat-label">Day Streak</div>
+    <div class="stat-sub">consecutive days with users</div>
+  </div>
 </div>
 
-<!-- ENGAGEMENT FUNNEL -->
-<div class="funnel" id="funnel">
-  <div><span class="funnel-num" id="f-opens">—</span><br><span class="funnel-label">OPENS</span></div>
-  <div class="funnel-arrow">→</div>
-  <div><span class="funnel-num" id="f-plays">—</span><br><span class="funnel-label">PLAYS</span></div>
-  <div class="funnel-arrow">→</div>
-  <div><span class="funnel-num" id="f-rate">—</span><br><span class="funnel-label">RATE</span></div>
-</div>
-
-<!-- DAILY PLAYS -->
+<!-- DAILY USERS + PLAYS -->
 <div class="section">
-  <div class="section-title">Plays Per Day</div>
+  <div class="section-title">Daily Activity (14 days)</div>
   <div class="chart-box">
     <div class="bar-chart" id="daily-chart"></div>
     <div class="bar-labels"><span>14 days ago</span><span>today</span></div>
   </div>
+  <div style="font-size:9px; color:#1a4a1a; text-align:right; margin-top:-6px;">bars = plays per day</div>
 </div>
 
 <!-- CUMULATIVE GROWTH -->
 <div class="section">
-  <div class="section-title">Total Plays Over Time</div>
+  <div class="section-title">Growth</div>
   <div class="chart-box">
+    <div style="display:flex; justify-content:space-between; font-size:9px; color:#1a4a1a; margin-bottom:4px;">
+      <span>total plays over time</span>
+      <span id="growth-label"></span>
+    </div>
     <div class="growth-chart" id="growth-chart"></div>
   </div>
 </div>
@@ -369,41 +180,62 @@
 
 <!-- PEAK HOURS -->
 <div class="section">
-  <div class="section-title">Peak Hours</div>
+  <div class="section-title">When People Listen</div>
   <div class="chart-box">
     <div class="hours-chart" id="hours-chart"></div>
     <div class="bar-labels"><span>12am</span><span>6am</span><span>12pm</span><span>6pm</span><span>12am</span></div>
   </div>
 </div>
 
-<!-- TOP SHOWS -->
+<!-- MOST PLAYED -->
 <div class="section">
-  <div class="section-title">Most Played</div>
+  <div class="section-title">Most Played Shows</div>
   <div id="top-shows"></div>
 </div>
 
-<!-- RECENT -->
+<!-- RECENT ACTIVITY -->
 <div class="section">
-  <div class="section-title">Recent</div>
+  <div class="section-title">Recent Activity</div>
   <div id="recent"></div>
 </div>
 
-<!-- ANNOUNCEMENT CONTROL -->
-<div class="section" style="margin-top:20px; padding-top:16px; border-top:1px solid rgba(51,255,51,0.15);">
-  <div class="section-title">Announcement</div>
-  <div style="margin-bottom:10px;">
-    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
-      <span style="font-size:11px; color:#1a5a1a; letter-spacing:1px;">STATUS:</span>
-      <span id="ann-status" style="font-family:'Courier New',monospace; font-size:13px;">—</span>
+<!-- ENGAGEMENT -->
+<div class="section">
+  <div class="section-title">Engagement</div>
+  <div style="display:flex; gap:8px; text-align:center;">
+    <div class="stat-card" style="flex:1;">
+      <div class="stat-value" style="font-size:18px;" id="e-opens">—</div>
+      <div class="stat-label">App Opens</div>
     </div>
-    <input id="ann-title" type="text" placeholder="Title (optional)" style="width:100%; background:rgba(51,255,51,0.05); border:1px solid rgba(51,255,51,0.15); border-radius:6px; color:#33ff33; font-family:'Courier New',monospace; font-size:14px; padding:8px 10px; margin-bottom:6px; outline:none;">
-    <textarea id="ann-message" placeholder="Message text" rows="3" style="width:100%; background:rgba(51,255,51,0.05); border:1px solid rgba(51,255,51,0.15); border-radius:6px; color:#33ff33; font-family:'Courier New',monospace; font-size:14px; padding:8px 10px; margin-bottom:8px; outline:none; resize:vertical;"></textarea>
-    <div style="display:flex; gap:8px;">
-      <button id="ann-activate" onclick="toggleAnnouncement(true)" style="flex:1; background:rgba(51,255,51,0.1); border:1px solid rgba(51,255,51,0.3); border-radius:6px; color:#33ff33; font-family:'Courier New',monospace; font-size:13px; padding:8px; cursor:pointer;">ACTIVATE</button>
-      <button id="ann-deactivate" onclick="toggleAnnouncement(false)" style="flex:1; background:rgba(255,60,60,0.1); border:1px solid rgba(255,60,60,0.3); border-radius:6px; color:#ff4444; font-family:'Courier New',monospace; font-size:13px; padding:8px; cursor:pointer;">DEACTIVATE</button>
+    <div style="display:flex; align-items:center; color:#1a4a1a; font-size:18px;">→</div>
+    <div class="stat-card" style="flex:1;">
+      <div class="stat-value" style="font-size:18px;" id="e-plays">—</div>
+      <div class="stat-label">Played a Show</div>
+    </div>
+    <div style="display:flex; align-items:center; color:#1a4a1a; font-size:18px;">→</div>
+    <div class="stat-card" style="flex:1;">
+      <div class="stat-value" style="font-size:18px;" id="e-rate">—</div>
+      <div class="stat-label">Play Rate</div>
     </div>
   </div>
 </div>
+
+<!-- ANNOUNCEMENT CONTROL -->
+<div class="section ann-section">
+  <div class="section-title">Announcement Control</div>
+  <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+    <span style="font-size:11px; color:#1a5a1a; letter-spacing:1px;">STATUS:</span>
+    <span id="ann-status" style="font-family:'Courier New',monospace; font-size:13px;">—</span>
+  </div>
+  <input id="ann-title" type="text" placeholder="Title (optional)" class="ann-input">
+  <textarea id="ann-message" placeholder="Message text" rows="3" class="ann-input" style="resize:vertical;"></textarea>
+  <div style="display:flex; gap:8px;">
+    <button onclick="toggleAnnouncement(true)" class="ann-btn ann-on">ACTIVATE</button>
+    <button onclick="toggleAnnouncement(false)" class="ann-btn ann-off">DEACTIVATE</button>
+  </div>
+</div>
+
+<div style="height:40px;"></div>
 
 <script>
 const SB_URL = 'https://dhwllgdxpeucldtmzhme.supabase.co';
@@ -417,11 +249,15 @@ const COLLS = {
   new_animal: 'NEW ANIMAL'
 };
 
-// SHOW_COLLECTIONS injected at build time
 const SC = {"gd69-02-27.sbd.16track.kaplan.6315.sbeok.shnf":["young_bettys"],"gd69-02-28.sbd.16track.kaplan.3397.sbeok.shnf":["young_bettys"],"gd69-03-01.sbd.16track.kaplan.4030.sbeok.shnf":["young_bettys"],"gd69-03-02.sbd.16track.kaplan.3344.sbeok.shnf":["young_bettys"],"gd69-05-23.sbd.kaplan.12223.sbeok.shnf":["young_bettys"],"gd71-02-18.sbd.orf.107.sbeok.shnf":["young_bettys"],"gd71-02-19.sbd.orf.1029.sbeok.shnf":["young_bettys"],"gd71-02-20.sbd.orf.111.sbeok.shnf":["young_bettys"],"gd71-02-21.sbd.lunz.1980.sbeok.shnf":["young_bettys"],"gd1971-02-23.sbd.miller.110353.flac16":["young_bettys"],"gd71-02-24.sbd.orf.114.sbeok.shnf":["young_bettys"],"gd1971-04-04.sbd.miller.110325.flac16":["young_bettys"],"gd71-04-05.sbd.stephens.16606.sbeok.shnf":["young_bettys"],"gd1971-04-06.sbd.cantor.gmb.96299.flac16":["young_bettys"],"gd71-04-07.sbd.orf.119.sbeok.shnf":["young_bettys"],"gd1971-04-08.141099.sbd.betty.pcm.dalton.miller.clugston.flac1644":["young_bettys"],"gd1971-04-25.sbd.matera.113038.sbeok.flac16":["young_bettys"],"gd1971-04-26.sbd.miller.105814.flac16":["young_bettys"],"gd71-04-27.sbd.murphy.2221.sbeok.shnf":["young_bettys"],"gd1971-04-28.sbd.miller.106099.flac16":["young_bettys"],"gd71-04-29.sbd.frisco.16782.sbeok.shnf":["young_bettys"],"gd1971-08-06.sbd.miller.96541.sbeok.flac16":["young_bettys"],"gd71-12-14.sbd.deibert.12763.sbeok.shnf":["young_bettys"],"gd1971-12-15.sbd.miller.97718.sbeok.flac16":["young_bettys"],"gd1972-03-21.sbd.miller.92395.sbeok.flac16":["young_bettys"],"gd1972-03-22.132726.sbd.miller.flac16":["young_bettys"],"gd1972-03-23.sbd.miller.100000.sbeok.flac16":["young_bettys"],"gd1972-03-25.136684.sbd.sirmick.flac1648":["young_bettys"],"gd1972-03-26.133303.sbd.miller.flac16":["young_bettys"],"gd1972-03-27.132366.sbd.miller.flac16":["young_bettys"],"gd1972-03-28.132729.sbd.miller.flac16":["young_bettys"],"gd72-04-08.sbd.giles-jeffm.2534.sbeok.shnf":["young_bettys"],"gd1972-04-08.sbd.miller.83714.sbeok.flac16":["young_bettys"],"gd1972-04-26.136637.sbd.mr.sirmickflac1648":["young_bettys"],"gd72-05-03.sbd.masse.142.sbeok.shnf":["young_bettys"],"gd1972-05-04.sbd.miller.77294.sbeok.flac16":["young_bettys"],"gd72-05-07.sbd-aud.clugston.9193.sbeok.shnf":["young_bettys"],"gd72-05-26.sbd.hollister.12758.sbeok.shnf":["young_bettys"],"gd1972-07-18.sbd.miller.32878.flac16":["young_bettys"],"gd72-08-12.sbd.hamilton.3327.sbeok.shnf":["young_bettys"],"gd1972-08-20.sbd.miller.83733.flac16":["young_bettys"],"gd72-08-21.sbd.hamilton.150.sbeok.shnf":["young_bettys"],"gd1972-08-22.sbd.miller.27780.shnf":["young_bettys"],"gd72-08-24.sbd.miller.18093.sbeok.shnf":["young_bettys"],"gd1972-08-25.sbd.miller.92840.sbeok.flac16":["young_bettys"],"gd72-08-27.sbd.orf.3328.sbeok.shnf":["young_bettys"],"gd72-09-21.sbd.masse.7296.sbeok.shnf":["young_bettys"],"gd1972-11-19.122784.sbd.miller-gans.flac24":["young_bettys"],"gd73-02-09.sbd.bertha-fink.14939.sbeok.shnf":["young_bettys"],"gd73-02-15.sbd.hall.1580.sbeok.shnf":["young_bettys"],"gd1973-02-21.sbd.miller.111120.flac16":["young_bettys"],"gd73-02-22.pset2-sbd.carman.12215.sbeok.shnf":["young_bettys"],"gd73-03-24.sbd.bertha-ashley.25508.sbeok.shnf":["young_bettys"],"gd73-06-10.sbd.hollister.174.sbeok.shnf":["young_bettys"],"gd1973-06-22.sbd.miller.88526.sbeok.flac16":["young_bettys"],"gd1973-06-24.sbd.miller.99852.sbeok.flac16":["young_bettys"],"gd73-07-28.sbd.weiner.14196.sbeok.shnf":["young_bettys"],"gd73-11-11.sbd.schlissel.14105.sbeok.shnf":["young_bettys"],"gd73-11-14.sbd.vernon.5612.sbeok.shnf":["young_bettys"],"gd74-02-22.sbd.patched.sirmick.21539.sbeok.shnf":["wall_of_sound"],"gd74-02-23.sbd.bertha-ashley.26362.sbeok.shnf":["wall_of_sound"],"gd74-02-24.sbd.windsor.199.sbefail.shnf":["wall_of_sound"],"gd1974-03-23.sbd.clugston-orf.1995.sbeok.shnf":["wall_of_sound"],"gd74-05-12.sbd.sacks.2224.sbeok.shnf":["wall_of_sound"],"gd74-05-14.sbd.murphy.1823.sbeok.shnf":["wall_of_sound"],"gd1974-05-17.sbd.miller.89972.sbeok.flac16":["wall_of_sound"],"gd74-05-19.sbd.clugston.6957.sbeok.shnf":["wall_of_sound"],"gd1974-05-21.sbd.kaplan.1347.shnf":["wall_of_sound"],"gd1974-06-08.sbd.miller.97268.sbeok.flac16":["wall_of_sound"],"gd74-06-16.sbd.fink.17701.sbeok.shnf":["wall_of_sound"],"gd74-06-18.sbd.sacks.209.sbefail.shnf":["wall_of_sound"],"gd74-06-20.sbd.clugston.2179.sbeok.shnf":["wall_of_sound"],"gd74-06-22.sbd.obv.30972.flacf":["wall_of_sound"],"gd1974-06-23.sbd.matrix-sb21b.chappell.83489.flac16":["wall_of_sound"],"gd1974-06-26.119613.mtx.dusborne.flac16":["wall_of_sound"],"gd1974-06-28.139780.sbd.miller.fixed.flac1644":["wall_of_sound"],"gd1974-06-30.sbd.miller.96275.sbeok.flac16":["wall_of_sound"],"gd74-07-19.sbd.symons.12381.sbeok.shnf":["wall_of_sound"],"gd74-07-25.sbd.fink.1072.sbeok.shnf":["wall_of_sound"],"gd74-07-27.sbd.kaplan.2420.sbeok.shnf":["wall_of_sound"],"gd1974-07-29.sbd.miller.107756.flac16":["wall_of_sound"],"gd1974-07-31.sbd.miller.32353.sbeok.flac16":["wall_of_sound"],"gd1974-08-04.mtx.seamons.100653.sbeok.flac16":["wall_of_sound"],"gd1974-08-05.131660.mtx.dusborne.flac16":["wall_of_sound"],"gd74-08-06.sbd.deadlists.1463.sbeok.shnf":["wall_of_sound"],"gd1974-09-09.135655.sbd.new.patched.miller.flac16":["wall_of_sound"],"gd1974-09-10.135699.sbd.new.patched.miller.flac16":["wall_of_sound"],"gd1974-09-11.sbd.unknown.4647.shnf":["wall_of_sound"],"gd74-09-18.sbd.miller.20732.sbeok.shnf":["wall_of_sound"],"gd1974-09-20.131529.sbd.miller.flac16":["wall_of_sound"],"gd74-09-21.sbd.miller.30654.sbeok.flacf":["wall_of_sound"],"gd1974-10-16.131539.mtx.dusborne.flac16":["wall_of_sound"],"gd74-10-17.sbd.barbella.16189.sbeok.shnf":["wall_of_sound"],"gd74-10-18.sbd.bertha-ashley.22796.sbeok.shnf":["wall_of_sound"],"gd74-10-19.sbd.miller.21927.sbeok.shnf":["wall_of_sound"],"gd1974-10-20.sbd.smith-lee.GEMS.97193.flac16":["wall_of_sound"],"gd77-02-26.sbd.alphadog.9752.sbeok.shnf":["cornell_and_company"],"gd77-03-18.sbd.unknown.254.sbeok.shnf":["cornell_and_company"],"gd1977-03-19.123190.sbd.miller.flac16":["cornell_and_company"],"gd77-04-22.sbd.cotsman.10148.sbeok.shnf":["cornell_and_company"],"gd1977-04-23.mtx.seamons.97596.sbeok.flac16":["cornell_and_company"],"gd77-04-25.sbd.symons.15879.sbeok.shnf":["cornell_and_company"],"gd1977-04-27.sbd.braverman.7799.shnf":["cornell_and_company"],"gd77-04-29.moore.unknown.7113.sbeok.shnf":["cornell_and_company"],"gd77-04-30.moore.minches.17952.sbeok.shnf":["cornell_and_company"],"gd1977-05-04.sbd.miller.91970.sbeok.flac16":["cornell_and_company"],"gd77-05-05.sbd.stephens.8832.sbeok.shnf":["cornell_and_company"],"gd77-05-07.sbd.eaton.wizard.26085.sbeok.shnf":["cornell_and_company"],"gd77-05-08.sbd.hicks.4982.sbeok.shnf":["cornell_and_company"],"gd77-05-09.sbd.connor.8304.sbeok.shnf":["cornell_and_company"],"gd77-05-11.sbd.barbella.8374.sbeok.shnf":["cornell_and_company"],"gd77-05-13.sbd.miller.9393.sbeok.shnf":["cornell_and_company"],"gd77-05-17.sbd.weiner.18554.sbeok.shnf":["cornell_and_company"],"gd1977-05-18.sbd.miller.79012.flac16":["cornell_and_company"],"gd77-05-19.sbd.direwolf.3120.sbeok.shnf":["cornell_and_company"],"gd1977-05-21.139573.sbd.gastwirt.miller.sirmick.flac1644":["cornell_and_company"],"gd1977-05-22.140278.sbd.miller.flac2496":["cornell_and_company"],"gd77-05-25.sbd.shannon.13399.sbefail.shnf":["cornell_and_company"],"gd77-05-26.sbd.sacks.3224.sbeok.shnf":["cornell_and_company"],"gd1977-06-08.mtx.seamons.95361.sbeok.flac16":["cornell_and_company"],"gd1977-06-09.28614.sbeok.flac16":["cornell_and_company"],"gd77-09-03.sbd.unk.276.sbefixed.shnf":["cornell_and_company"],"gd77-09-28.sbd.connor.10482.sbeok.shnf":["cornell_and_company"],"gd1977-10-01.sbd.cantor.gmb.86234.sbeok.flac16":["cornell_and_company"],"gd77-10-02.sbd.unknown.278.sbeok.shnf":["cornell_and_company"],"gd1977-10-07.sbd-set2.miller.79020.sbeok.flac16":["cornell_and_company"],"gd1977-10-09.sbd.miller.88961.sbeok.flac16":["cornell_and_company"],"gd77-10-11.sbd.cotsman.19290.sbeok.shnf":["cornell_and_company"],"gd1977-10-28.sbd.miller.96159.sbeok.flac16":["cornell_and_company"],"gd1977-10-29.sbd.miller.92085.sbeok.flac16":["cornell_and_company"],"gd77-10-30.sbd.nawrocki.14946.sbeok.shnf":["cornell_and_company"],"gd77-11-01.sbd.jeffm.2485.sbeok.shnf":["cornell_and_company"],"gd77-11-04.sbd.unknown.2595.sbeok.shnf":["cornell_and_company"],"gd77-11-05.sbd.clugston.6934.sbeok.shnf":["cornell_and_company"],"gd77-11-06.sbd.nawrocki.283.sbeok.shnf":["cornell_and_company"],"gd77-12-27.sbd.cotsman.19288.sbeok.shnf":["cornell_and_company"],"gd1977-12-29.137198.sbd.miller.flac1648":["cornell_and_company"],"gd1977-12-30.132379.sbd.miller.flac16":["cornell_and_company"],"gd79-04-22.sbd.bennett.12001.sbeok.shnf":["new_animal"],"gd1979-05-05.sbd.miller.fishmanj-repitch.78748.flac16":["new_animal"],"gd79-08-04.sbd.munder.9578.sbeok.shnf":["new_animal"],"gd1979-09-02.sbd.miller.93011.sbeok.flac16":["new_animal"],"gd79-10-25.sbd.set2.fishman.21271.sbefail.shnf":["new_animal"],"gd79-10-27.sbd.clugston.13980.sbeok.shnf":["new_animal"],"gd79-10-31.sbd.miller.29410.sbeok.flacf":["new_animal"],"gd1979-11-01.sbd.miller.23445.shnf":["new_animal"],"gd79-11-02.sbd.macdonald.7920.sbeok.shnf":["new_animal"],"gd79-11-06.sbd.clugston.2417.sbeok.shnf":["new_animal"],"gd79-11-09.sbd.stern.318.sbeok.shnf":["new_animal"],"gd79-11-10.sbd.clugston.14108.sbeok.shnf":["new_animal"],"gd1979-12-26.sbd.evans.gems.81323.sbeok.flac16":["new_animal"],"gd79-12-28.sbd.lai.4145.sbefail.shnf":["new_animal"],"gd79-12-30.sbd.ladner.4797.sbeok.shnf":["new_animal"],"gd79-12-31.sbd.hinko.17281.sbeok.shnf":["new_animal"],"gd1980-01-13.sbd.miller.106517.flac16":["new_animal"],"gd1980-03-30.sbd.miller.92666.sbeok.flac16":["new_animal"],"gd1980-05-15.126692.mtx.dusborne.flac16":["new_animal"],"gd80-05-16.sbd.clugston.7472.sbeok.shnf":["new_animal"],"gd1980-06-20.sbd.bertha.tetzeli.fix-25468.73846.reflac.flac16":["new_animal"],"gd1980-08-19.sbd.miller.88172.sbeok.flac16":["new_animal"],"gd80-09-02.sbd.miller.28299.sbeok.flacf":["new_animal"],"gd1980-10-04.151437.sbd.1st-gen.miller.t.flac16":["new_animal"],"gd80-10-14.sbd-aud.gardner.3828.sbeok.shnf":["new_animal"],"gd80-10-26.sbd.hinko.18862.sbeok.shnf":["new_animal"],"gd1980-10-30.139599.sbd.bershaw.flac16":["new_animal"],"gd80-10-31.sbd-preFM.cousinit.20377.sbeok.shnf":["new_animal"],"gd80-11-28.sbd.vernon.20049.sbeok.shnf":["new_animal"],"gd80-11-30.sbd-aud.sacks.2416.sbeok.shnf":["new_animal"],"gd1980-12-26.121531.upg-sbd.tobin.flac16":["new_animal"],"gd80-12-28.sbd.cousinit.17421.sbeok.shnf":["new_animal"],"gd80-12-31.sbd.gorinsky.6391.sbeok.shnf":["new_animal"]};
 
 const today = () => new Date().toISOString().split('T')[0];
-const fmtDate = d => { const m = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']; const dt = new Date(d+'T12:00:00'); return `${m[dt.getMonth()]} ${dt.getDate()}`; };
+const fmtDate = d => {
+  if (!d) return '?';
+  const m = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const dt = new Date(d + 'T12:00:00');
+  return `${m[dt.getMonth()]} ${dt.getDate()}`;
+};
 
 async function q(table, params='') {
   const r = await fetch(`${SB_URL}/rest/v1/${table}?${params}`, { headers: H });
@@ -429,11 +265,10 @@ async function q(table, params='') {
 }
 
 async function refresh() {
-  // Fetch all data sources in parallel
   const [plays, nowPlaying, analytics] = await Promise.all([
-    q('gd_bootleg_listening_log', 'select=*&order=listened_date.desc&limit=2000'),
+    q('gd_bootleg_listening_log', 'select=*&order=listened_date.desc&limit=5000'),
     q('gd_bootleg_now_playing', 'select=*').catch(() => []),
-    q('xlii_analytics', 'select=*&order=created_at.desc&limit=5000').catch(() => [])
+    q('xlii_analytics', 'select=*&order=created_at.desc&limit=10000').catch(() => [])
   ]);
 
   const t = today();
@@ -444,89 +279,76 @@ async function refresh() {
   document.getElementById('np-count').textContent = active.length;
   const npShows = document.getElementById('np-shows');
   if (active.length > 0) {
-    npShows.innerHTML = active.map(n => {
-      const date = n.show_date || '';
-      const venue = n.show_venue || '';
-      const track = n.track_name || '';
-      return `<div>${fmtDate(date)} — ${venue}${track ? ' · ' + track : ''}</div>`;
-    }).join('');
+    npShows.innerHTML = active.map(n => `<div>${fmtDate(n.show_date)} — ${n.show_venue || ''}${n.track_name ? ' · ' + n.track_name : ''}</div>`).join('');
     npShows.className = 'np-shows';
   } else {
     npShows.textContent = 'No active listeners';
     npShows.className = 'np-shows np-empty';
   }
 
-  // STATS
-  const playsToday = plays.filter(d => d.listened_date && d.listened_date.startsWith(t)).length;
-  const uniqueShows = new Set(plays.map(d => d.show_identifier).filter(Boolean)).size;
-  const playDays = [...new Set(plays.map(d => d.listened_date ? d.listened_date.split('T')[0] : null).filter(Boolean))].sort();
-  const uniqueDays = playDays.length;
+  // ANALYTICS: device-level data
+  const openEvents = (analytics || []).filter(a => a.event === 'app_open');
+  const playEvents = (analytics || []).filter(a => a.event === 'show_play');
 
-  // Streak — consecutive days ending today (or yesterday)
+  // Users today = unique devices that opened today
+  const usersToday = new Set(openEvents.filter(a => a.created_at && a.created_at.startsWith(t)).map(a => a.device_id).filter(Boolean)).size;
+  // Total users = unique devices ever
+  const totalUsers = new Set(openEvents.map(a => a.device_id).filter(Boolean)).size;
+
+  // Plays today
+  const playsToday = plays.filter(d => d.listened_date && d.listened_date.startsWith(t)).length;
+  // Total plays
+  const totalPlays = plays.length;
+  // Unique shows
+  const uniqueShows = new Set(plays.map(d => d.show_identifier).filter(Boolean)).size;
+
+  // Streak — consecutive days with at least one user
+  const userDays = [...new Set(openEvents.map(a => a.created_at ? a.created_at.split('T')[0] : null).filter(Boolean))].sort();
   let streak = 0;
-  if (playDays.length > 0) {
+  if (userDays.length > 0) {
     const check = new Date();
     for (let i = 0; i < 365; i++) {
       const d = check.toISOString().split('T')[0];
-      if (playDays.includes(d)) {
-        streak++;
-        check.setDate(check.getDate() - 1);
-      } else if (i === 0) {
-        // today might not have plays yet, check yesterday
-        check.setDate(check.getDate() - 1);
-      } else {
-        break;
-      }
+      if (userDays.includes(d)) { streak++; check.setDate(check.getDate() - 1); }
+      else if (i === 0) { check.setDate(check.getDate() - 1); }
+      else break;
     }
   }
 
-  // Unique devices
-  const devices = new Set((analytics || []).filter(a => a.event === 'app_open').map(a => a.device_id).filter(Boolean)).size;
+  // Yesterday's users for comparison
+  const yesterday = new Date(); yesterday.setDate(yesterday.getDate() - 1);
+  const yd = yesterday.toISOString().split('T')[0];
+  const usersYesterday = new Set(openEvents.filter(a => a.created_at && a.created_at.startsWith(yd)).map(a => a.device_id).filter(Boolean)).size;
+  const playsYesterday = plays.filter(d => d.listened_date && d.listened_date.startsWith(yd)).length;
 
-  document.getElementById('s-today').textContent = playsToday;
-  document.getElementById('s-total').textContent = plays.length;
-  document.getElementById('s-shows').textContent = uniqueShows;
-  document.getElementById('s-devices').textContent = devices || '—';
-  document.getElementById('s-days').textContent = uniqueDays;
+  // Update stat cards
+  document.getElementById('s-users-today').textContent = usersToday;
+  document.getElementById('s-users-today-sub').textContent = usersYesterday > 0 ? `yesterday: ${usersYesterday}` : '';
+  document.getElementById('s-total-users').textContent = totalUsers || '—';
+  document.getElementById('s-plays-today').textContent = playsToday;
+  document.getElementById('s-plays-today-sub').textContent = playsYesterday > 0 ? `yesterday: ${playsYesterday}` : '';
+  document.getElementById('s-total-plays').textContent = totalPlays;
+  document.getElementById('s-unique-shows').textContent = uniqueShows;
   document.getElementById('s-streak').textContent = streak > 0 ? streak + 'd' : '—';
 
-  // FUNNEL
-  const opens = (analytics || []).filter(a => a.event === 'app_open').length;
-  const playEvents = (analytics || []).filter(a => a.event === 'show_play').length;
-  const rate = opens > 0 ? Math.round((playEvents / opens) * 100) + '%' : '—';
-  document.getElementById('f-opens').textContent = opens || '—';
-  document.getElementById('f-plays').textContent = playEvents || '—';
-  document.getElementById('f-rate').textContent = rate;
+  // ENGAGEMENT
+  document.getElementById('e-opens').textContent = openEvents.length || '—';
+  document.getElementById('e-plays').textContent = playEvents.length || '—';
+  document.getElementById('e-rate').textContent = openEvents.length > 0 ? Math.round((playEvents.length / openEvents.length) * 100) + '%' : '—';
 
-  // SHOW OF THE WEEK
-  const weekAgo = new Date(Date.now() - 7*24*60*60*1000).toISOString().split('T')[0];
-  const weekPlays = plays.filter(d => d.listened_date && d.listened_date >= weekAgo);
-  const weekCounts = {};
-  weekPlays.forEach(d => { weekCounts[d.show_identifier] = (weekCounts[d.show_identifier] || 0) + 1; });
-  const weekTop = Object.entries(weekCounts).sort((a,b) => b[1]-a[1])[0];
-  const swEl = document.getElementById('show-week');
-  if (weekTop && weekTop[1] > 1) {
-    const meta = weekPlays.find(d => d.show_identifier === weekTop[0]);
-    document.getElementById('sw-show').textContent = meta?.show_date ? fmtDate(meta.show_date) + ', ' + (meta.show_date?.split('-')[0] || '') : weekTop[0];
-    document.getElementById('sw-venue').textContent = meta?.show_venue || '';
-    document.getElementById('sw-plays').textContent = weekTop[1] + ' plays this week';
-    swEl.style.display = 'block';
-  } else {
-    swEl.style.display = 'none';
-  }
-
-  // DAILY CHART
+  // DAILY CHART — plays per day, last 14 days
   const dayCounts = {};
   plays.forEach(d => { if (d.listened_date) { const day = d.listened_date.split('T')[0]; dayCounts[day] = (dayCounts[day]||0)+1; }});
-  const days = [];
-  for (let i = 13; i >= 0; i--) { const dt = new Date(); dt.setDate(dt.getDate()-i); days.push(dt.toISOString().split('T')[0]); }
-  const maxDay = Math.max(...days.map(d => dayCounts[d]||0), 1);
-  document.getElementById('daily-chart').innerHTML = days.map(d => {
+  const days14 = [];
+  for (let i = 13; i >= 0; i--) { const dt = new Date(); dt.setDate(dt.getDate()-i); days14.push(dt.toISOString().split('T')[0]); }
+  const maxDay = Math.max(...days14.map(d => dayCounts[d]||0), 1);
+  document.getElementById('daily-chart').innerHTML = days14.map(d => {
     const c = dayCounts[d]||0;
-    return `<div class="bar" style="height:${Math.max((c/maxDay)*100,2)}%" title="${fmtDate(d)}: ${c}"></div>`;
+    const h = Math.max((c/maxDay)*100, c > 0 ? 8 : 2);
+    return `<div class="bar" style="height:${h}%" title="${fmtDate(d)}: ${c} plays">${c > 0 ? '<div class="bar-val">'+c+'</div>' : ''}</div>`;
   }).join('');
 
-  // CUMULATIVE GROWTH
+  // GROWTH
   const growthEl = document.getElementById('growth-chart');
   if (plays.length > 0) {
     const sorted = [...plays].sort((a,b) => (a.listened_date||'').localeCompare(b.listened_date||''));
@@ -537,6 +359,7 @@ async function refresh() {
     growthEl.innerHTML = `<svg class="growth-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
       <polyline points="${svgPoints}" fill="none" stroke="rgba(51,255,51,0.4)" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
     </svg>`;
+    document.getElementById('growth-label').textContent = totalPlays + ' total';
   } else {
     growthEl.innerHTML = '<div class="empty">No data yet</div>';
   }
@@ -570,7 +393,7 @@ async function refresh() {
     showCounts[id]=(showCounts[id]||0)+1;
     if (!showMeta[id]) showMeta[id] = { date: d.show_date||'', venue: d.show_venue||'' };
   });
-  const top = Object.entries(showCounts).sort((a,b)=>b[1]-a[1]).slice(0,8);
+  const top = Object.entries(showCounts).sort((a,b)=>b[1]-a[1]).slice(0,10);
   const topEl = document.getElementById('top-shows');
   topEl.innerHTML = top.length === 0 ? '<div class="empty">No data yet</div>' :
     top.map(([id,c],i) => {
@@ -579,9 +402,12 @@ async function refresh() {
     }).join('');
 
   // RECENT
-  const recent = plays.slice(0,10);
+  const recent = plays.slice(0, 12);
   document.getElementById('recent').innerHTML = recent.length === 0 ? '<div class="empty">No data yet</div>' :
-    recent.map(d => `<div class="list-item"><span class="list-name">${d.show_date?fmtDate(d.show_date):'?'}${d.show_venue?' — '+d.show_venue:''}</span><span class="list-val" style="font-size:10px;color:#1a5a1a;">${d.listened_date?fmtDate(d.listened_date):''}</span></div>`).join('');
+    recent.map(d => {
+      const when = d.listened_date ? fmtDate(d.listened_date) : '';
+      return `<div class="list-item"><span class="list-name">${d.show_date?fmtDate(d.show_date):'?'}${d.show_venue?' — '+d.show_venue:''}</span><span class="list-val" style="font-size:10px;color:#1a5a1a;">${when}</span></div>`;
+    }).join('');
 
   document.getElementById('last-updated').textContent = 'Updated ' + new Date().toLocaleTimeString();
 }
@@ -607,20 +433,7 @@ async function loadAnnouncement() {
 async function toggleAnnouncement(activate) {
   const title = document.getElementById('ann-title').value.trim();
   const message = document.getElementById('ann-message').value.trim();
-
-  if (activate && !message) {
-    alert('Enter a message first');
-    return;
-  }
-
-  const id = activate ? 'ann-' + Date.now() : 'default';
-  const body = {
-    id: id,
-    title: title,
-    message: message,
-    active: activate,
-    updated_at: new Date().toISOString()
-  };
+  if (activate && !message) { alert('Enter a message first'); return; }
 
   try {
     // Deactivate all existing
@@ -631,19 +444,16 @@ async function toggleAnnouncement(activate) {
     });
 
     if (activate) {
-      // Insert new active announcement
       await fetch(`${SB_URL}/rest/v1/xlii_announcements`, {
         method: 'POST',
         headers: { ...H, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
-        body: JSON.stringify(body)
+        body: JSON.stringify({ id: 'ann-' + Date.now(), title, message, active: true, updated_at: new Date().toISOString() })
       });
     }
 
     document.getElementById('ann-status').textContent = activate ? 'ACTIVE' : 'OFF';
     document.getElementById('ann-status').style.color = activate ? '#33ff33' : '#1a5a1a';
-  } catch(e) {
-    console.error('Announcement update failed:', e);
-  }
+  } catch(e) { console.error('Announcement update failed:', e); }
 }
 
 loadAnnouncement();
