@@ -395,8 +395,28 @@ async function refresh() {
   document.getElementById('last-updated').textContent = 'Updated ' + new Date().toLocaleTimeString();
 }
 
+// Adaptive polling: 15min normally, 1min when someone is listening
+let pollInterval = 15 * 60 * 1000; // 15 minutes
+let pollTimer = null;
+function schedulePoll() {
+  if (pollTimer) clearTimeout(pollTimer);
+  pollTimer = setTimeout(async () => {
+    await refresh();
+    // Check if anyone is actively listening (updated in last 5 min)
+    const fiveMinAgo = new Date(Date.now() - 5*60*1000).toISOString();
+    const np = document.getElementById('np-count');
+    const activeCount = parseInt(np?.textContent || '0');
+    const newInterval = activeCount > 0 ? 60 * 1000 : 15 * 60 * 1000;
+    if (newInterval !== pollInterval) {
+      console.log(`Polling: ${newInterval === 60000 ? '1min (listener active)' : '15min (idle)'}`);
+    }
+    pollInterval = newInterval;
+    schedulePoll();
+  }, pollInterval);
+}
 refresh();
-setInterval(refresh, 60000);
+pollInterval = 60 * 1000; // first re-check in 1min to detect listeners quickly
+schedulePoll();
 
 </script>
 </body>
